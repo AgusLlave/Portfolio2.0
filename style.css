@@ -124,10 +124,20 @@ section {
 .home-img img {
   max-width: 300px;
   height: auto;
-  width: 100%;
-  border-radius: 50%;
-  border-style: double;
-  border-color: #0f0f0f;
+  width: 90%;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate3d(1, 1, 1, 0deg);
+  }
+  50% {
+    transform: rotate3d(1, 1, 1, 180deg);
+  }
+  100% {
+    transform: rotate3d(1, 1, 1, 360deg);
+  }
 }
 
 .home-text h1 {
@@ -484,6 +494,11 @@ form textarea {
   background: var(--main-color);
 }
 
+#msg-form {
+  color: #61b752;
+  display: block;
+}
+
 @media (max-width: 1480px) {
   header {
     padding: 12px 2.5%;
@@ -565,7 +580,13 @@ form textarea {
   .navlist.open {
     top: 100%;
   }
-  .home-img {
-    display: none;
+}
+
+@media (max-width: 500px) {
+  .home-text h1 {
+    font-size: 3rem;
+  }
+  .home-text h3 {
+    font-size: 2rem;
   }
 }
